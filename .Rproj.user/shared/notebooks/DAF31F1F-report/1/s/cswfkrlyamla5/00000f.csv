@@ -1,0 +1,5 @@
+"0","d <- read_csv(here('data','raw','penguins.csv'))
+"
+"2","Error in here(""data"", ""raw"", ""penguins.csv"") : 
+  could not find function ""here""
+"
