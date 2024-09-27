@@ -1,0 +1,1 @@
+This is where you would put the study protocol, which outlines the rationale, methods, and analysis plan. You can preregister the protocol in advance of the study on websites like the Open Science Framework (osf.io).

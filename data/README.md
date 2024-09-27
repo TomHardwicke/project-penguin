@@ -1,0 +1,1 @@
+This is where you would put data files. It can be helpful to separate the raw data (which you should never modify!) from the primary data and processed data. Primary data = raw data with minimal modifications (e.g., anonymisation) in order to make it publicly sharable.
