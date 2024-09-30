@@ -10,6 +10,7 @@ bibliography: references.bib
 ---
 
 ![](pesto.jpg)
+I love pesto.
 
 ```{r setup, include=FALSE}
 # install.packages('knitr')
@@ -22,7 +23,7 @@ opts_chunk$set(echo = T,  message = F)
 
 # R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. Most importantly, we can embed R code into our text! For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+This is an **R Markdown document**. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. Most importantly, we can embed R code into our text! For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
 
@@ -103,7 +104,7 @@ It has — great!
 Let's try and make the plot again...
 
 ```{r flip-bod-plot-corrected, fig.cap="Relationship between flipper length and body mass with missing data corrected."}
-ggplot(
+ggplot( # this is a comment
   data = penguins_v2,
   mapping = aes(x = flipper_length_mm, y = body_mass_g)
 ) +
@@ -128,6 +129,7 @@ Ok let's look at a couple of other scenarios where we might want to update our a
 So let's load in the new data `penguins_v3`.
 
 ```{r}
+# loading data file
 penguins_v3 <- read_csv(here('data','raw','penguins_v3.csv'))
 ```
 
@@ -145,19 +147,19 @@ Let's make our plot again with the new data...
 
 ```{r flip-bod-plot-more-penguins, fig.cap="Relationship between flipper length and body mass with new data."}
 ggplot(
-  data = penguins_v3,
+  data = penguins_v3, # specifying data
   mapping = aes(x = flipper_length_mm, y = body_mass_g)
 ) +
   geom_point(aes(color = species, shape = species)) +
   geom_smooth(method = "lm") +
   labs(
-    title = "Body mass and flipper length",
+    title = "Body mass and flipper length", # choosing a title 
     subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
     x = "Flipper length (mm)", y = "Body mass (g)",
     color = "Species", shape = "Species"
   ) +
   scale_color_viridis_d() +
-  theme_minimal()
+  theme_minimal() # specifying a theme
 ```
 
 Excellent! In R Markdown, we don't have to keep rewriting the analysis from scratch (which is inefficient and error prone). Instead we can just reuse our old code and update specific aspects that we want to change.
